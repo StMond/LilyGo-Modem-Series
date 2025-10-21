@@ -41,6 +41,9 @@
 #define BLYNK_TEMPLATE_NAME         "Device"
 #define BLYNK_AUTH_TOKEN            "YourAuthToken"
 
+/* If you are using a T-Mobile SIM card and cannot activate the network, try turning on IPv6 */
+// #define T_MOBILE_USE_IPV6
+
 // It depends on the operator whether to set up an APN. If some operators do not set up an APN,
 // they will be rejected when registering for the network. You need to ask the local operator for the specific APN.
 // APNs from other operators are welcome to submit PRs for filling.
@@ -245,8 +248,21 @@ void setup()
         Serial.println(ueInfo);
     }
 
+
+
+#if defined(TINY_GSM_MODEM_SIM7600) && defined(T_MOBILE_USE_IPV6)
+    modem.sendAT("+CGDCONT=1,\"IPV6\",\"\"");
+    modem.waitResponse();
+    modem.sendAT("+CSOCKSETPN=1,6");
+    modem.waitResponse();
+    modem.sendAT("+CIPCFG=\"IP-TYPE\",2");
+    modem.waitResponse();
+    Serial.println("IPv6 mode enabled");
+#endif
+
     if (!modem.setNetworkActive()) {
         Serial.println("Enable network failed!");
+        Serial.println("If you are using a T-Mobile SIM card and cannot activate the network, try turning on IPv6");
     }
 
     delay(5000);
@@ -283,7 +299,6 @@ void setup()
 
     String name = modem.getModemName();
     Serial.println("Modem Name: " + name);
-
 
     Blynk.begin(BLYNK_AUTH_TOKEN, modem, apn, user, pass);
     // Setup a function to be called every two second
@@ -363,9 +378,9 @@ IMEI: XXXXXXXXXXXX
 Manufacturer: SIMCOM INCORPORATED
 Model: SIMCOM_SIM7600G-H
 Revision: LE20B04SIM7600G22
-QCN: 
+QCN:
 IMEI: xxxxxxxxxxxxxxxx
-MEID: 
+MEID:
 +GCAP: +CGSM
 DeviceInfo: 173,170
 
@@ -390,9 +405,9 @@ AT+SIMCOMATI
 Manufacturer: SIMCOM INCORPORATED
 Model: SIMCOM_SIM7600G-H
 Revision: LE20B04SIM7600G22
-QCN: 
+QCN:
 IMEI: 862636054508609
-MEID: 
+MEID:
 +GCAP: +CGSM
 DeviceInfo: 173,170
 
@@ -402,7 +417,7 @@ OK
 Initializing modem...
 Modem Name: SIM7600G-H
 
-[43754] 
+[43754]
     ___  __          __
    / _ )/ /_ _____  / /__
   / _  / / // / _ \/  '_/
@@ -427,9 +442,9 @@ loop...
 Manufacturer: SIMCOM INCORPORATED
 Model: SIMCOM_SIM7600G-H
 Revision: LE20B05SIM7600G22
-QCN: 
+QCN:
 IMEI: xxxxxxxxxxx
-MEID: 
+MEID:
 +GCAP: +CGSM
 DeviceInfo: 173,170
 
@@ -453,9 +468,9 @@ AT+SIMCOMATI
 Manufacturer: SIMCOM INCORPORATED
 Model: SIMCOM_SIM7600G-H
 Revision: LE20B05SIM7600G22
-QCN: 
+QCN:
 IMEI: xxxxxxxxxxx
-MEID: 
+MEID:
 +GCAP: +CGSM
 DeviceInfo: 173,170
 
@@ -465,7 +480,7 @@ OK
 Initializing modem...
 Modem Name: SIM7600G-H
 
-[42846] 
+[42846]
     ___  __          __
    / _ )/ /_ _____  / /__
   / _  / / // / _ \/  '_/
