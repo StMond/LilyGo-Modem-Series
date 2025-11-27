@@ -89,9 +89,10 @@
 
 > \[!IMPORTANT]
 >
-> 1. Unable to upload any code? Please see the FAQ below
-> 2. When opening the Arduino IDE, you will be prompted that there are new libraries that can be updated. Please do not click update. There is no guarantee that it can be compiled, run, etc. after the update. Make sure that the board is running normally before deciding whether to update. You have to Know that problems may occur after updating due to library differences, or the default configuration (such as TinyGSM) will be overwritten.
-> 3. If it runs abnormally after the update, please follow Article 4 of the Arduino Quick Start to delete the directory in libraries, and drag the folder in lib into the libraries directory again.
+> 1. Do not use USB-C to USB-C to power the motherboard. Please use USB-A to USB-C to power the motherboard. The USB-C port on the Apple computer cannot directly power the motherboard.
+> 2. Unable to upload any code? Please see the FAQ below
+> 3. When opening the Arduino IDE, you will be prompted that there are new libraries that can be updated. Please do not click update. There is no guarantee that it can be compiled, run, etc. after the update. Make sure that the board is running normally before deciding whether to update. You have to Know that problems may occur after updating due to library differences, or the default configuration (such as TinyGSM) will be overwritten.
+> 4. If it runs abnormally after the update, please follow Article 4 of the Arduino Quick Start to delete the directory in libraries, and drag the folder in lib into the libraries directory again.
 
 ### 📍 Pins Map
 
