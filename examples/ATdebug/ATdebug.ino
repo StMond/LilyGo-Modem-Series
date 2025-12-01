@@ -49,11 +49,19 @@ void setup()
 {
     Serial.begin(115200); // Set console baud rate
 
-    Serial.println("Start Sketch");
+    //Wait 5 second for Serial connected
+    int i = 5;
+    while (i--) {
+        Serial.printf("Waiting for Serial to connect... %d\r\n", i);
+        delay(1000);
+    }
 
+    Serial.println("Start Sketch");
+    Serial.printf("Initialize SerialAT at pins RX:%d, TX:%d\n", MODEM_RX_PIN, MODEM_TX_PIN);
     SerialAT.begin(115200, SERIAL_8N1, MODEM_RX_PIN, MODEM_TX_PIN);
 
 #ifdef BOARD_LED_PIN
+    Serial.printf("Set LED pin %d OFF\n", BOARD_LED_PIN);
     pinMode(BOARD_LED_PIN, OUTPUT);
     digitalWrite(BOARD_LED_PIN, !LED_ON);
 #endif
@@ -63,12 +71,14 @@ void setup()
     * * @note      Known issues, ESP32 (V1.2) version of T-A7670, T-A7608,
     *            when using battery power supply mode, BOARD_POWERON_PIN (IO12) must be set to high level after esp32 starts, otherwise a reset will occur.
     * */
+    Serial.printf("Set power control pin %d HIGH\n", BOARD_POWERON_PIN);
     pinMode(BOARD_POWERON_PIN, OUTPUT);
     digitalWrite(BOARD_POWERON_PIN, HIGH);
 #endif
 
     // Set modem reset pin ,reset modem
 #ifdef MODEM_RESET_PIN
+    Serial.printf("Reset modem via pin %d\n", MODEM_RESET_PIN);
     pinMode(MODEM_RESET_PIN, OUTPUT);
     digitalWrite(MODEM_RESET_PIN, !MODEM_RESET_LEVEL); delay(100);
     digitalWrite(MODEM_RESET_PIN, MODEM_RESET_LEVEL); delay(2600);
@@ -76,23 +86,29 @@ void setup()
 #endif
 
 #ifdef MODEM_FLIGHT_PIN
+    Serial.printf("Set flight mode pin %d HIGH\r\n", MODEM_FLIGHT_PIN);
     // If there is an airplane mode control, you need to exit airplane mode
     pinMode(MODEM_FLIGHT_PIN, OUTPUT);
     digitalWrite(MODEM_FLIGHT_PIN, HIGH);
 #endif
 
     // Pull down DTR to ensure the modem is not in sleep state
+    Serial.printf("Set DTR pin %d LOW\n", MODEM_DTR_PIN);
     pinMode(MODEM_DTR_PIN, OUTPUT);
     digitalWrite(MODEM_DTR_PIN, LOW);
 
 
     // Turn on the modem
+    Serial.printf("Power on modem via pin %d\n", BOARD_PWRKEY_PIN);
     pinMode(BOARD_PWRKEY_PIN, OUTPUT);
     digitalWrite(BOARD_PWRKEY_PIN, LOW);
     delay(100);
     digitalWrite(BOARD_PWRKEY_PIN, HIGH);
     delay(MODEM_POWERON_PULSE_WIDTH_MS);
     digitalWrite(BOARD_PWRKEY_PIN, LOW);
+
+    Serial.printf("utilities.h select model : ");
+    Serial.println(PRODUCT_MODEL_NAME);
 
     // Check whether it has been started
     bool started = checkRespond();
@@ -119,6 +135,7 @@ void setup()
 
 
 #ifdef BOARD_LED_PIN
+    Serial.printf("Set LED pin %d ON\n", BOARD_LED_PIN);
     pinMode(BOARD_LED_PIN, OUTPUT);
     digitalWrite(BOARD_LED_PIN, LED_ON);
 #endif
