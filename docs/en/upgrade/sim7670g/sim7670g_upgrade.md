@@ -30,7 +30,7 @@
 - [🟡2374B03SIM767XM5A](https://drive.google.com/file/d/1bBrze2eDtrjEuJ_2yiufSo87eIk_mYkE/view?usp=sharing) <!-- 20241008 Update Fixed  HTTP 715 error-->
 - [🟡2374B04SIM767XM5A](https://drive.google.com/file/d/1-akwKQJttLbtLD48ApagusfBvS9ixZ4F/view?usp=sharing)
 - [🟢 Stabilize:2374B05V01SIM767XM5A](https://drive.google.com/file/d/10VvMNzgKhAX25lHSIGHnD3ip7kWjFl0g/view?usp=sharing) <!-- 20241206 Fixed MQTTS error https://github.com/Xinyuan-LilyGO/LilyGO-T-A76XX/issues/183 , HTTPS MQTTS FIXED -->
-- [🟣 Latest: 2388B03SIM767XM5A](https://drive.google.com/file/d/1_Gwj3v_6NCtC-6xQ8dGSrjayTFRJyVgu/view?usp=sharing)
+- [🟣 Latest: 2388B03SIM767XM5A Not recommended to use it; there are many problems.](https://drive.google.com/file/d/1_Gwj3v_6NCtC-6xQ8dGSrjayTFRJyVgu/view?usp=sharing)
 
 > \[!IMPORTANT]
 >
@@ -55,10 +55,10 @@
 
 8. Select the firmware file to be upgraded in the software.
 
-![](./iamges/upgrade-1.png)
+![upgrade1](./iamges/upgrade-1.png)
 
-![](./iamges/upgrade-2.png)
+![upgrade2](./iamges/upgrade-2.png)
 
-9.  Open the upgrade tool and select the modem's port number.
+9. Open the upgrade tool and select the modem's port number.
 
 10. Unplug the ESP32's Type-C cable, then reconnect it. The upgrade will automatically begin.
