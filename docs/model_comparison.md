@@ -13,7 +13,7 @@
 | T-SIM7670G-S3<br>-**Standard** | ESP32-S3-WROOM-1(NR16R2) | ✅     | ✅                                  | ✅                           | ✅           | ✅           | ✅   | ✅                   | Avg: 147uA            | ✅                 |
 | T-SIM7000G-S3<br>-**Standard** | ESP32-S3-WROOM-1(NR16R2) | ✅     | ✅                                  | ✅                           | ❌           | ✅           | ✅   | ✅                   | Avg: 166uA            | ✅                 |
 | T-SIM7080G-S3<br>-**Standard** | ESP32-S3-WROOM-1(NR16R2) | ✅     | ✅                                  | ✅                           | ❌           | ✅           | ✅   | ✅                   | Avg: 128uA            | ✅                 |
-| T-SIM7600G-S3<br>-**Standard** | ESP32-S3-WROOM-1(NR16R2) | ✅     | ✅                                  | ✅                           | ❌           | ✅           | ✅   | ✅                   | Avg: 128uA            | ✅                 |
+| T-SIM7600G-S3<br>-**Standard** | ESP32-S3-WROOM-1(NR16R2) | ✅     | ✅                                  | ❌                           | ❌           | ✅           | ✅   | ✅                   | Avg: 128uA            | ✅                 |
 
 - ESP32-WROVER-B(N4R8): 4MB Flash , 8MB PSRAM
 - ESP32-S3-WROOM-1(N16R8): 16MB Flash , 8MB PSRAM(Octal SPI)

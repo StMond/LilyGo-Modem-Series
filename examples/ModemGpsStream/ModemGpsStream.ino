@@ -10,7 +10,6 @@
  *      2. T-SIM7670G-S3-Standard
  *      3. T-SIM7080G-S3-Standard
  *      4. T-SIM7000G-S3-Standard
- *      5. T-SIM7600G-S3-Standard
  *      Other models are not supported
  */
 #include "utilities.h"
