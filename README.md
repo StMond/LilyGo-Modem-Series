@@ -137,10 +137,17 @@
 <table style="width: 100%; border-collapse: collapse; text-align: center; border: 0; border-spacing: 0; margin: 20px 0;">
   <tr style="border: 0;">
     <!-- T-SIM7080G-S3-Standard -->
-    <td style="padding: 10px 20px; width: 100%; border: 0; background: transparent;">
+    <td style="padding: 10px 20px; width: 50%; border: 0; background: transparent;">
       <a href="./docs/en/esp32s3/sim7080-s3-standard/REAMDE.MD" style="text-decoration: none; display: block;">
         <img src="./images/product/png/H795T-SIM7080G-S3-Standard.png" alt="T-SIM7080G-S3-Standard" width="200" style="border: 0;"/>
         <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7080G-S3-Standard Quick Start</div>
+      </a>
+    </td>
+    <!-- T-SIM7600G-S3-Standard -->
+    <td style="padding: 10px 20px; width: 50%; border: 0; background: transparent;">
+      <a href="./docs/en/esp32s3/sim7600g-s3-standard/REAMDE.MD" style="text-decoration: none; display: block;">
+        <img src="./images/product/png/H803-T-SIM7600G-S3-Standard.png" alt="T-SIM7600G-S3-Standard" width="200" style="border: 0;"/>
+        <div style="color: #FFFF; font-weight: 600; margin-top: 8px;">T-SIM7600G-S3-Standard Quick Start</div>
       </a>
     </td>
   </tr>
