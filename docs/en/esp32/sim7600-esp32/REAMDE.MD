@@ -89,13 +89,34 @@
 > 3. When opening the Arduino IDE, you will be prompted that there are new libraries that can be updated. Please do not click update. There is no guarantee that it can be compiled, run, etc. after the update. Make sure that the board is running normally before deciding whether to update. You have to Know that problems may occur after updating due to library differences, or the default configuration (such as TinyGSM) will be overwritten.
 > 4. If it runs abnormally after the update, please follow Article 4 of the Arduino Quick Start to delete the directory in libraries, and drag the folder in lib into the libraries directory again.
 
+### DIP Switch
+
+<img src="./images/DIP-SWITCH.png" alt="ESP programming mode" width="480" style="border: 0;"/>
+
+### DIP switch schematic diagram
+
+<img src="./images/DIP.png" alt="ESP programming mode" width="480" style="border: 0;"/>
+
+| Name  | GPIO NUM | ON                         | OFF                 |
+| ----- | -------- | -------------------------- | ------------------- |
+| Pin 1 | 27       | Connect to ESP             | Disconnect from ESP |
+| Pin 2 | 26       | Connect to ESP             | Disconnect from ESP |
+| Pin 3 | NC       | No connect                 | No connect          |
+| Pin 4 | PWRKEY   | Power on controlled by ESP | Power on start      |
+
 #### ESP programming mode
 
-![ESP programming mode](./images/TTL.png)
+<img src="./images/TTL.png" alt="ESP programming mode" width="240" style="border: 0;"/>
+
+* Switch P1~P2 to ON, and connect the modem's RX/TX to the ESP.
+* Switch P4 to OFF to enable ESP control of the modem.
 
 #### USB Modem mode
 
-![USB Modem mode](./images/USB.png)
+<img src="./images/USB.png" alt="ESP programming mode" width="240" style="border: 0;"/>
+
+* Switch P1~P2 to OFF, disconnect the modem's RX/TX to the ESP.
+* Switch P4 to ON to enable automatic startup upon power-on, eliminating the need for ESP to control the modem's power-on.
 
 * USB Modem mode is used to connect the modem to a PC to update the firmware or use dial-up Internet access.
 
@@ -149,6 +170,8 @@
 > the sunshine time may not exceed one hour per day. At this time, if the solar panel is too small and the light is not sufficient, it cannot be charged.
 > 3. Connect the VBUS pin to the USB-C power supply. If USB-C is present, the VBUS voltage is equal to the USB-C voltage. If USB-C is not present, there is no voltage on VBUS.
 > 4. Connect the VBAT pin to the positive terminal of the battery. This pin can be used to connect an external battery directly to the VBAT pin. When using an external battery, it is best not to connect the battery to the development board's 18650 battery holder unless the battery's parameters are similar to the external battery. Batteries connected to the VBAT pin can be charged using the onboard charge management.
+> 5. The VBUS pin is the only interface besides the battery that supplies power to the board; there is no other way.
+>
 
 ### ⚡Battery Protector Description
 
