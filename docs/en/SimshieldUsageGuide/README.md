@@ -41,6 +41,7 @@
 > \[!IMPORTANT]
 >
 > A7670X/A7608X motherboards, resistors need to be removed to use SimShield. Please refer to this link for instructions on [How to remove resistors](https://github.com/Xinyuan-LilyGO/LilyGo-Modem-Series/issues/160#issuecomment-2409860411)
+>
 > SIM7000G does not have this limitation.
 >
 
